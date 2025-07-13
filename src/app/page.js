@@ -1,103 +1,153 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { ChevronRight } from "lucide-react";
+import Header from "@/components/ui/Header";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+
+// 1. Hero Section
+function HeroSection() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <section className="bg-white text-black py-20 px-6 text-center">
+      <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+        Take Control of Your Finances
+      </h1>
+      <p className="text-lg md:text-2xl max-w-2xl mx-auto mb-8">
+        Visualize, analyze, and optimize your spending in seconds with AI-powered insights.
+      </p>
+      <div className="flex justify-center">
+        <Link href="/login">
+          <Button size="lg" className="flex items-center gap-2 cursor-pointer">
+            Get Started <ChevronRight size={20} />
+          </Button>
+        </Link>
+      </div>
+    </section>
+  );
+}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+// 2. Features Section
+const features = [
+  { title: "Add & Track", desc: "Easily log income and expenses.", icon: "📝" },
+  { title: "Expense Breakdown", desc: "See spending by category.", icon: "📊" },
+  { title: "AI Insights", desc: "One-liner & detailed reports.", icon: "🤖" },
+  { title: "Time Filters", desc: "View day/week/month/year.", icon: "⏰" },
+];
+
+function FeaturesSection() {
+  return (
+    <section className="py-16 px-6">
+      <h2 className="text-3xl font-bold text-center mb-10">Key Features</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {features.map((f) => (
+          <Card key={f.title} className="text-center p-6">
+            <CardHeader>
+              <div className="text-4xl mb-4">{f.icon}</div>
+              <CardTitle>{f.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>{f.desc}</CardDescription>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// 4. Testimonials Section
+const testimonials = [
+  { name: "Ravi K.", role: "Freelance Designer", quote: "This tool helped me identify I was overspending on takeout—saved ₹2,000 last month!" },
+  { name: "Priya S.", role: "Startup Founder", quote: "The AI insights are spot on. I reallocated my budget and boosted savings by 15%." },
+];
+
+function TestimonialsSection() {
+  return (
+    <section className="bg-gray-50 py-16 px-6">
+      <h2 className="text-3xl font-bold text-center mb-10">What Our Users Say</h2>
+      <div className="max-w-3xl mx-auto space-y-8">
+        {testimonials.map((t) => (
+          <blockquote key={t.name} className="border-l-4 border-blue-500 pl-6 italic">
+            "{t.quote}"
+            <footer className="mt-2 font-semibold">— {t.name}, {t.role}</footer>
+          </blockquote>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// 5. How It Works Section
+const steps = [
+  { number: 1, title: "Connect & Add", desc: "Make your account and add transactions." },
+  { number: 2, title: "Visualize", desc: "See your spending breakdown in charts." },
+  { number: 3, title: "Act", desc: "Follow AI recommendations to save more." },
+];
+
+function HowItWorksSection() {
+  return (
+    <section className="py-16 px-6">
+      <h2 className="text-3xl font-bold text-center mb-10">How It Works</h2>
+      <div className="flex flex-col md:flex-row justify-center items-start gap-8">
+        {steps.map((s) => (
+          <div key={s.number} className="text-center max-w-xs">
+            <div className="text-5xl font-bold text-blue-600 mb-4">{s.number}</div>
+            <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+            <p className="text-gray-600">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// 7. Footer Section
+function Footer() {
+  return (
+    <footer className="bg-gray-900 text-gray-300 py-6 px-6">
+      <div className="max-w-5xl mx-auto flex flex-col items-center justify-between md:flex-row gap-4">
+        <p className="text-sm">
+          Made by <span className="font-semibold text-white">Dhruvdeep Chakravorty</span>
+        </p>
+
+        <div className="flex gap-4 text-xl">
+          <Link
+            href="https://github.com/dhruvdeepChakravorty"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-white transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            <FaGithub />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/dhruvdeep-chakravorty-405772331/"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-white transition-colors"
           >
-            Read our docs
-          </a>
+            <FaLinkedin />
+          </Link>
+          
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </footer>
+  );
+}
+
+//PS Header is in componenets
+
+// Main Home Page
+export default function Page() {
+  return (
+    <main className="flex flex-col">
+      <Header/>
+      <HeroSection />
+      <FeaturesSection />
+      <TestimonialsSection />
+      <HowItWorksSection />
+      <Footer />
+    </main>
   );
 }
