@@ -51,7 +51,7 @@ export default function MyForm() {
 
         if (loginRes?.ok) {
           form.reset();
-          router.push("/");
+          router.push("/dashboard");
         } else {
           console.log("Auto Login Failed", loginRes);
           router.push("/login");

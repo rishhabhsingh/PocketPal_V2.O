@@ -42,7 +42,7 @@ export default function MyForm() {
 
       if (res.ok) {
         toast.success("Logged in successfully");
-        router.push('/');
+        router.push('/dashboard');
       } else {
         toast.error(res.error || "Login failed");
       }

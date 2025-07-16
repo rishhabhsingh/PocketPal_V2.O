@@ -8,7 +8,7 @@ import { toast } from "sonner";
 export default function GoogleAuthButton({ action = "sign-in" }) {
   const handleGoogleAuth = async () => {
     try {
-      await signIn("google", { callbackUrl: "/" });
+      await signIn("google", { callbackUrl: "/dashboard" });
     } catch (error) {
       console.log("Error While Google auth", error);
       toast.error("Sign In failed");
