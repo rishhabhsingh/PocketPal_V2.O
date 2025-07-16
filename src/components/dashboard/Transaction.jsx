@@ -60,13 +60,11 @@ export default function Transaction({ transactions, loading, getTransactions, sh
   };
 
   return (
-    <div className="px-4 py-4 bg-white">
-      <h2 className="font-bold text-2xl flex justify-center mb-4">Transactions</h2>
-
+    <div className="px-2 sm:px-4 py-4 bg-white w-full">
+      <h2 className="font-bold text-xl sm:text-2xl flex justify-center mb-4">Transactions</h2>
       <div className="flex justify-end mb-4">
         <AddTransaction onAddSuccess={getTransactions} />
       </div>
-
       {loading ? (
         showSkeleton ? (
           <div className="space-y-4">
@@ -92,14 +90,14 @@ export default function Transaction({ transactions, loading, getTransactions, sh
           {transactions?.map((item, index) => (
             <div
               key={index}
-              className="border border-gray-200 rounded-xl bg-white shadow-md p-4 mb-3 transition-transform duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] hover:bg-gray-50 cursor-pointer"
+              className="border border-gray-200 rounded-xl bg-white shadow-md p-3 sm:p-4 mb-3 transition-transform duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03] hover:bg-gray-50 cursor-pointer w-full"
             >
-              <div className="flex justify-between items-center">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-800">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-800">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-500 mt-1">
+                  <p className="text-xs sm:text-sm text-gray-500 mt-1">
                     {new Date(item.date).toLocaleDateString("en-IN", {
                       day: "numeric",
                       month: "short",
@@ -107,21 +105,19 @@ export default function Transaction({ transactions, loading, getTransactions, sh
                     })}
                   </p>
                 </div>
-
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 mt-2 sm:mt-0">
                   <span
-                    className={`font-bold ${
+                    className={`font-bold text-base sm:text-lg ${
                       item.type === "income" ? "text-green-600" : "text-red-600"
                     }`}
                   >
                     ₹{item.amount}
                   </span>
-
                   <DeleteTransactionDialog
                     item={item}
                     trigger={
-                      <button onClick={() => setSelectedTxn(item)}>
-                        <FaTrash className="text-red-500 hover:text-red-700 text-md" />
+                      <button onClick={() => setSelectedTxn(item)} className="p-2 rounded hover:bg-red-100">
+                        <FaTrash className="text-red-500 hover:text-red-700 text-md sm:text-lg" />
                       </button>
                     }
                     onConfirm={handleDelete}

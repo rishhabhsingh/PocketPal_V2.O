@@ -10,16 +10,16 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 // 1. Hero Section
 function HeroSection() {
   return (
-    <section className="bg-white text-black py-20 px-6 text-center">
-      <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+    <section className="bg-white text-black py-12 sm:py-20 px-2 sm:px-6 text-center">
+      <h1 className="text-2xl sm:text-4xl md:text-6xl font-extrabold mb-4">
         Take Control of Your Finances
       </h1>
-      <p className="text-lg md:text-2xl max-w-2xl mx-auto mb-8">
+      <p className="text-base sm:text-lg md:text-2xl max-w-2xl mx-auto mb-8">
         Visualize, analyze, and optimize your spending in seconds with AI-powered insights.
       </p>
       <div className="flex justify-center">
         <Link href="/login">
-          <Button size="lg" className="flex items-center gap-2 cursor-pointer">
+          <Button size="lg" className="flex items-center gap-2 cursor-pointer w-full max-w-xs sm:max-w-none justify-center">
             Get Started <ChevronRight size={20} />
           </Button>
         </Link>
@@ -38,13 +38,13 @@ const features = [
 
 function FeaturesSection() {
   return (
-    <section className="py-16 px-6">
-      <h2 className="text-3xl font-bold text-center mb-10">Key Features</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="py-10 sm:py-16 px-2 sm:px-6">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10">Key Features</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {features.map((f) => (
-          <Card key={f.title} className="text-center p-6">
+          <Card key={f.title} className="text-center p-4 sm:p-6">
             <CardHeader>
-              <div className="text-4xl mb-4">{f.icon}</div>
+              <div className="text-3xl sm:text-4xl mb-2 sm:mb-4">{f.icon}</div>
               <CardTitle>{f.title}</CardTitle>
             </CardHeader>
             <CardContent>
@@ -65,11 +65,11 @@ const testimonials = [
 
 function TestimonialsSection() {
   return (
-    <section className="bg-gray-50 py-16 px-6">
-      <h2 className="text-3xl font-bold text-center mb-10">What Our Users Say</h2>
-      <div className="max-w-3xl mx-auto space-y-8">
+    <section className="bg-gray-50 py-10 sm:py-16 px-2 sm:px-6">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10">What Our Users Say</h2>
+      <div className="max-w-3xl mx-auto space-y-6 sm:space-y-8 px-2">
         {testimonials.map((t) => (
-          <blockquote key={t.name} className="border-l-4 border-blue-500 pl-6 italic">
+          <blockquote key={t.name} className="border-l-4 border-blue-500 pl-4 sm:pl-6 italic text-sm sm:text-base">
             "{t.quote}"
             <footer className="mt-2 font-semibold">— {t.name}, {t.role}</footer>
           </blockquote>
@@ -88,14 +88,14 @@ const steps = [
 
 function HowItWorksSection() {
   return (
-    <section className="py-16 px-6">
-      <h2 className="text-3xl font-bold text-center mb-10">How It Works</h2>
-      <div className="flex flex-col md:flex-row justify-center items-start gap-8">
+    <section className="py-10 sm:py-16 px-2 sm:px-6">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10">How It Works</h2>
+      <div className="flex flex-col md:flex-row justify-center items-start gap-6 sm:gap-8">
         {steps.map((s) => (
-          <div key={s.number} className="text-center max-w-xs">
-            <div className="text-5xl font-bold text-blue-600 mb-4">{s.number}</div>
-            <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
-            <p className="text-gray-600">{s.desc}</p>
+          <div key={s.number} className="text-center max-w-xs w-full mx-auto">
+            <div className="text-3xl sm:text-5xl font-bold text-blue-600 mb-2 sm:mb-4">{s.number}</div>
+            <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{s.title}</h3>
+            <p className="text-gray-600 text-sm sm:text-base">{s.desc}</p>
           </div>
         ))}
       </div>
@@ -106,13 +106,13 @@ function HowItWorksSection() {
 // 7. Footer Section
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-6 px-6">
+    <footer className="bg-gray-900 text-gray-300 py-6 px-2 sm:px-6">
       <div className="max-w-5xl mx-auto flex flex-col items-center justify-between md:flex-row gap-4">
-        <p className="text-sm">
+        <p className="text-xs sm:text-sm">
           Made by <span className="font-semibold text-white">Dhruvdeep Chakravorty</span>
         </p>
 
-        <div className="flex gap-4 text-xl">
+        <div className="flex gap-4 text-lg sm:text-xl">
           <Link
             href="https://github.com/dhruvdeepChakravorty"
             target="_blank"

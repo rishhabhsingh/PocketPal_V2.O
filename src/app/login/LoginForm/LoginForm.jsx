@@ -58,7 +58,7 @@ export default function MyForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 max-w-3xl mx-auto py-10"
+        className="space-y-6 w-full max-w-md mx-auto py-8 px-2 sm:px-6"
       >
         <FormField
           control={form.control}
@@ -67,14 +67,13 @@ export default function MyForm() {
             <FormItem>
               <FormLabel>Username or Email</FormLabel>
               <FormControl>
-                <Input placeholder="" type="text" {...field} />
+                <Input placeholder="" type="text" {...field} className="w-full" />
               </FormControl>
               <FormDescription>Enter your username or email</FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="password"
@@ -82,7 +81,7 @@ export default function MyForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input placeholder="" type="text" {...field} />
+                <Input placeholder="" type="text" {...field} className="w-full" />
               </FormControl>
               <FormDescription>Enter Your Password</FormDescription>
               <FormMessage />
@@ -90,7 +89,7 @@ export default function MyForm() {
           )}
         />
         <button
-          className="bg-blue-600 text-white font-bold px-6 py-2 rounded-sm hover:bg-blue-400 transition"
+          className="bg-blue-600 text-white font-bold w-full py-2 rounded-sm hover:bg-blue-400 transition"
           disabled={loading}
         >
           {loading ? "Logging in..." : "Log In"}

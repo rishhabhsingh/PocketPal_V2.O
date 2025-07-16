@@ -36,12 +36,11 @@ export default function Dashboard() {
   return (
     <>
       <Header />
-      <div className="flex h-[calc(100vh-64px)]">
-        <div className="flex-[1] p-4 overflow-hidden">
+      <div className="flex flex-col lg:flex-row h-auto lg:h-[calc(100vh-64px)] gap-4 p-2 sm:p-4">
+        <div className="lg:flex-[1] w-full lg:w-auto mb-4 lg:mb-0">
           <Sidebar transactions={transactions} />
         </div>
-
-        <div className="flex-[2] p-4 overflow-y-auto">
+        <div className="lg:flex-[2] w-full lg:w-auto">
           <Transaction
             transactions={transactions}
             loading={loading}

@@ -46,18 +46,16 @@ export default function FullReport({ transactions, children }) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent>
+      <DialogContent className="w-full max-w-xs sm:max-w-lg p-2 sm:p-6">
         <DialogHeader>
-          <DialogTitle>Detailed Report</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-base sm:text-lg">Detailed Report</DialogTitle>
+          <DialogDescription className="text-xs sm:text-sm">
             Here's your complete income/expense breakdown.
           </DialogDescription>
         </DialogHeader>
-
-        <p className="mt-2 text-gray-600 text-sm whitespace-pre-line">{aiInsight}</p>
-
+        <p className="mt-2 text-gray-600 text-xs sm:text-sm whitespace-pre-line break-words">{aiInsight}</p>
         <DialogClose asChild>
-          <Button className="mt-4" variant="outline">
+          <Button className="mt-4 w-full sm:w-auto" variant="outline">
             Close
           </Button>
         </DialogClose>

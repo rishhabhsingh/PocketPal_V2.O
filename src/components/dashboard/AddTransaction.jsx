@@ -102,16 +102,15 @@ export default function AddTransaction({ onAddSuccess }) {
         <FaPlus className="text-2xl cursor-pointer bg-blue-100 p-2 rounded-full hover:shadow-md" />
       </DialogTrigger>
 
-      <DialogContent className="sm:max-w-[425px]">
-        <form onSubmit={handleSubmit}>
+      <DialogContent className="w-full max-w-xs sm:max-w-[425px] p-2 sm:p-6">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <DialogHeader>
             <DialogTitle>Add New Transaction</DialogTitle>
             <DialogDescription>
               Add a transaction to your list to get analysis.
             </DialogDescription>
           </DialogHeader>
-
-          <div className="grid gap-4 py-4">
+          <div className="grid gap-4 py-2">
             <div className="grid gap-2">
               <Label htmlFor="title">Title</Label>
               <Input
@@ -120,9 +119,9 @@ export default function AddTransaction({ onAddSuccess }) {
                 placeholder="e.g. Rent, Groceries"
                 value={form.title}
                 onChange={handleChange}
+                className="w-full"
               />
             </div>
-
             <div className="grid gap-2">
               <Label htmlFor="amount">Amount (₹)</Label>
               <Input
@@ -131,9 +130,9 @@ export default function AddTransaction({ onAddSuccess }) {
                 name="amount"
                 value={form.amount}
                 onChange={handleChange}
+                className="w-full"
               />
             </div>
-
             <div className="grid gap-2">
               <Label htmlFor="type">Type</Label>
               <select
@@ -141,13 +140,12 @@ export default function AddTransaction({ onAddSuccess }) {
                 id="type"
                 value={form.type}
                 onChange={handleChange}
-                className="border px-3 py-2 rounded-md"
+                className="border px-3 py-2 rounded-md w-full"
               >
                 <option value="expense">Expense</option>
                 <option value="income">Income</option>
               </select>
             </div>
-
             <div className="grid gap-2">
               <Label htmlFor="category">Category</Label>
               <select
@@ -155,7 +153,7 @@ export default function AddTransaction({ onAddSuccess }) {
                 id="category"
                 value={form.category}
                 onChange={handleChange}
-                className="border px-3 py-2 rounded-md"
+                className="border px-3 py-2 rounded-md w-full"
               >
                 <option value="">Select a category</option>
                 {(form.type === "income"
@@ -168,7 +166,6 @@ export default function AddTransaction({ onAddSuccess }) {
                 ))}
               </select>
             </div>
-
             <div className="grid gap-2">
               <Label className="text-sm font-medium">Select Date</Label>
               <Popover>
@@ -187,7 +184,7 @@ export default function AddTransaction({ onAddSuccess }) {
                     )}
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
+                <PopoverContent className="w-full max-w-xs p-0">
                   <Calendar
                     mode="single"
                     selected={form.date}
@@ -202,14 +199,11 @@ export default function AddTransaction({ onAddSuccess }) {
               </Popover>
             </div>
           </div>
-
-          <DialogFooter>
+          <DialogFooter className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
             <DialogClose asChild>
-              <Button type="button" variant="outline">
-                Cancel
-              </Button>
+              <Button type="button" variant="outline" className="w-full sm:w-auto">Cancel</Button>
             </DialogClose>
-            <Button type="submit">Add Transaction</Button>
+            <Button type="submit" className="w-full sm:w-auto">Add Transaction</Button>
           </DialogFooter>
         </form>
       </DialogContent>

@@ -87,8 +87,8 @@ A modern, AI-powered personal finance management application built with Next.js 
    ```
 
 4. **Run the development server**
-   ```bash
-   npm run dev
+```bash
+npm run dev
    ```
 
 5. **Open your browser**
