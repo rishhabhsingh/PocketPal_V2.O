@@ -13,6 +13,7 @@ export default function Dashboard() {
     try {
       const res = await fetch("/api/get-transaction");
       const data = await res.json();
+      console.log("Fetching transactions from /api/get-transaction...");
 
       if (res.ok) setTransactions(data.transaction);
       else console.error(data.error);

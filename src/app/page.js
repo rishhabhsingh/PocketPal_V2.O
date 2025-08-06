@@ -109,12 +109,12 @@ function Footer() {
     <footer className="bg-gray-900 text-gray-300 py-6 px-2 sm:px-6">
       <div className="max-w-5xl mx-auto flex flex-col items-center justify-between md:flex-row gap-4">
         <p className="text-xs sm:text-sm">
-          Made by <span className="font-semibold text-white">Dhruvdeep Chakravorty</span>
+          Made by <span className="font-semibold text-white">Rishabh Singh</span>
         </p>
 
         <div className="flex gap-4 text-lg sm:text-xl">
           <Link
-            href="https://github.com/dhruvdeepChakravorty"
+            href="https://github.com/rishhabhsingh"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition-colors"
@@ -122,7 +122,7 @@ function Footer() {
             <FaGithub />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/dhruvdeep-chakravorty-405772331/"
+            href="https://www.linkedin.com/in/rishabh-singh-b13773225/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition-colors"

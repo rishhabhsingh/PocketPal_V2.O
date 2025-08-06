@@ -3,8 +3,8 @@ import SessionWrapper from "@/components/sessionWrapper";
 import { Toaster } from "sonner";
 
 export const metadata = {
-  title: "AI Finance Analyzer",
-  description: "Track expenses, visualize spending patterns, and get AI-powered insights to optimize your financial health.",
+  title: "PocketPal++",
+  description: "Smart Companion for Students — Finance + Productivity + More",
   icons: {
     icon: '/favicon-simple.svg',
     shortcut: '/favicon-simple.svg',

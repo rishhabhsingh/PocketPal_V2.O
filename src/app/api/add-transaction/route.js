@@ -17,7 +17,10 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
   try {
+    console.log("Connecting to DB...");
     await dbConnect();
+    console.log("Connected. Fetching transactions...");
+
 
     const session = await getServerSession(authOptions);
     const body = await req.json();

@@ -15,7 +15,7 @@ export default function Header() {
     <header className="w-full flex flex-col sm:flex-row items-center justify-between px-4 sm:px-6 py-4 border-b gap-2 sm:gap-0">
       <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 w-full sm:w-auto">
         <Link href="/">
-          <h1 className="text-2xl sm:text-3xl font-bold cursor-pointer text-center sm:text-left">AI Finance Analyzer</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold cursor-pointer text-center sm:text-left">PocketPal++</h1>
         </Link>
         {session?.user && (
            <Link

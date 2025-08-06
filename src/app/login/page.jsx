@@ -7,7 +7,7 @@ export default function LoginPage() {
   return (
     <>
       <header className="w-full flex items-center justify-center px-6 py-4 border-b">
-        <h1 className="text-3xl font-bold">AI Finance Analyzer</h1>
+        <h1 className="text-3xl font-bold">PocketPal++</h1>
       </header>
 
       <div className="flex justify-center mt-20 px-4">

@@ -6,6 +6,7 @@ async function dbConnect() {
         console.log("Db already connected") // Will not connected if db is already connection(Does not reconnect on every request)
         return;
     }
+    console.log("MongoDB URI:", process.env.MONGODB_URI); // ✅ This will work
     if (!process.env.MONGODB_URI) {
         throw new Error("No Connection string from ENV"); // Will throw this if no string is found in ENV to connect
     }
